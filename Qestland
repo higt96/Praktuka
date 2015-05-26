@@ -36,6 +36,7 @@ Proval: ;
 		goto Proval;
 	}
 
+//Написати продовження
 
 	return 0;
 }
