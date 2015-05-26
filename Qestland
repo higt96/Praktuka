@@ -1,1 +1,41 @@
-#Тут буде програма
+// Praktuka.cpp: определяет точку входа для консольного приложения.
+//
+
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "ukr");
+	int V = 0;
+
+	cout << "Ви в печерi бачите дверi." << endl;
+	cout << "Щоб вiдкрити введiть 1"<< endl;
+	cout << "Оглянутись  2"<<endl;
+	cout << "Назад 3"<<endl; 
+	cout << "Взяти 4" << endl;
+Proval: ;
+	cin >> V;   //вводим варіант вибору, переробити на слово
+	switch (V)
+	{
+	case 1:	
+		cout << "Дверi мiцно зачиненi" << endl;   //зайти як зчитувати з файлу
+		goto Proval;
+	case 2:
+		cout << "Бачу вузький прохiд" << endl;
+		goto Proval;
+	case 3:	
+		cout << "Я немало пролетiв назад не доскочу" << endl;
+			goto Proval;
+	case 4:	
+		cout << "Добре, я взяв себе в руки" << endl;
+			goto Proval;
+	default:
+		cout << "Невiрна команда" << endl;
+		goto Proval;
+	}
+
+
+	return 0;
+}
