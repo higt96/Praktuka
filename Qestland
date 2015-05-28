@@ -3,12 +3,59 @@
 
 #include "stdafx.h"
 #include <iostream>
+#include <conio.h>
+#include <string.h>
+#include <fstream>
+#include <string>
+
+#include <vector>
+#include <sstream>
+#include <algorithm>
+#include <iterator>
+#include <regex>
+
 using namespace std;
+string str;
+
+void tex(int n){//Считує рядок N
+	
+		/*/ setlocale(0, "");
+
+		 ifstream in("input.txt"); // открыли файл для чтения
+
+		 
+
+		 //string str;
+		 for (int i = 1; i < n; i++) // пропускаем n - 1 строки
+			 in.ignore(255, '\n');
+
+		 if (!in.eof()) // если не конец файла
+		 {
+			 getline(in, ::str); // считали нужную строку
+		 }
+
+		 in.close(); //закрыли  файл
+
+		 cin.get();
+	std::ifstream input("input.txt");
+	std::vector<std::string> words{ std::istream_iterator<std::string>{input}, std::istream_iterator<std::string>{} };
+	input.close();
+
+
+	for (const auto &i : words)
+	if (std::regex_match(i, std::regex("(1)(.*)(01)")))
+		str = i;/*/
+	
+	 }
 
 int main()
 {
-	setlocale(LC_ALL, "ukr");
-	int V = 0;
+	
+	setlocale(LC_ALL, "Russian");
+	int V;
+	
+	
+	
 
 	cout << "Ви в печерi бачите дверi." << endl;
 	cout << "Щоб вiдкрити введiть 1"<< endl;
@@ -16,19 +63,33 @@ int main()
 	cout << "Назад 3"<<endl; 
 	cout << "Взяти 4" << endl;
 Proval: ;
-	cin >> V;   //вводим варіант вибору, переробити на слово
+	
+	/*/
+	std::ifstream input("input.txt"); //має считувати дані між двома мітками, не робить, зупиняється на пробілі
+	std::vector<std::string> words{ std::istream_iterator<std::string>{input}, std::istream_iterator<std::string>{} };
+	input.close();
+
+
+	for (const auto &i : words)
+
+	
+	if (std::regex_match(i, std::regex("(1)(.*)")))
+	
+		str = i;/*/
+	V = _getch(); //нажаття клавіші
 	switch (V)
 	{
-	case 1:	
-		cout << "Дверi мiцно зачиненi" << endl;   //зайти як зчитувати з файлу
+	case '1':	
+		tex(1);
+		cout << ::str << endl;
 		goto Proval;
-	case 2:
+	case '2':
 		cout << "Бачу вузький прохiд" << endl;
 		goto Proval;
-	case 3:	
+	case '3':	
 		cout << "Я немало пролетiв назад не доскочу" << endl;
 			goto Proval;
-	case 4:	
+	case '4':	
 		cout << "Добре, я взяв себе в руки" << endl;
 			goto Proval;
 	default:
@@ -36,7 +97,11 @@ Proval: ;
 		goto Proval;
 	}
 
-//Написати продовження
 
+	
+
+	system("pause");
+	
 	return 0;
 }
+
