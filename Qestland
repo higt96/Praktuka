@@ -8,24 +8,17 @@
 #include <fstream>
 #include <string>
 
-#include <vector>
-#include <sstream>
-#include <algorithm>
-#include <iterator>
-#include <regex>
 
 using namespace std;
 string str;
 
 void tex(int n){//Считує рядок N
 	
-		/*/ setlocale(0, "");
+		 setlocale(0, "");
 
 		 ifstream in("input.txt"); // открыли файл для чтения
 
 		 
-
-		 //string str;
 		 for (int i = 1; i < n; i++) // пропускаем n - 1 строки
 			 in.ignore(255, '\n');
 
@@ -36,7 +29,8 @@ void tex(int n){//Считує рядок N
 
 		 in.close(); //закрыли  файл
 
-		 cin.get();
+		// cin.get();
+		 /*/
 	std::ifstream input("input.txt");
 	std::vector<std::string> words{ std::istream_iterator<std::string>{input}, std::istream_iterator<std::string>{} };
 	input.close();
@@ -45,61 +39,431 @@ void tex(int n){//Считує рядок N
 	for (const auto &i : words)
 	if (std::regex_match(i, std::regex("(1)(.*)(01)")))
 		str = i;/*/
-	
 	 }
 
 int main()
 {
 	
 	setlocale(LC_ALL, "Russian");
-	int V;
-	
-	
+Begi:;
+	int V;//нажата клавіша
+	int k = 0;///кирка
+	int m = 0; //мотузка
+	int key = 0;//ключ
 	
 
-	cout << "Ви в печерi бачите дверi." << endl;
-	cout << "Щоб вiдкрити введiть 1"<< endl;
-	cout << "Оглянутись  2"<<endl;
-	cout << "Назад 3"<<endl; 
-	cout << "Взяти 4" << endl;
-Proval: ;
+	tex(1);
+	cout << ::str << endl;
+	tex(2);
+	cout << ::str << endl;
+	tex(3);
+	cout << ::str << endl;
+
+
+
 	
-	/*/
-	std::ifstream input("input.txt"); //має считувати дані між двома мітками, не робить, зупиняється на пробілі
+	
+/*/	std::ifstream input("input.txt"); //має считувати дані між двома мітками, не робить, зупиняється на пробілі
 	std::vector<std::string> words{ std::istream_iterator<std::string>{input}, std::istream_iterator<std::string>{} };
 	input.close();
 
-
+	
 	for (const auto &i : words)
 
+	{
+		
+		if (std::regex_match(i, std::regex("(01)")))
+			k = 0;
+		if (k == 1)
+		{
+			str += i;
+			str += " ";
+		}
+		if (std::regex_match(i, std::regex(n)))
+				k = 1;
+		/*/
+Proval:;////////////////////////////////////Провал
 	
-	if (std::regex_match(i, std::regex("(1)(.*)")))
-	
-		str = i;/*/
 	V = _getch(); //нажаття клавіші
 	switch (V)
 	{
-	case '1':	
-		tex(1);
+	case '1':
+		if (key == 1 & k!=1)
+		{
+			tex(30);
+			cout << ::str << endl;		}
+		if (k==1)
+		{
+			tex(31);
+			cout << ::str << endl;
+			goto End;
+		}
+		else
+		{
+			tex(4);
+			cout << ::str << endl;
+			goto Proval;
+		}
+	case '2':
+		tex(11);
+		cout << ::str << endl;
+		goto Potik;
+	case '3':
+		tex(5);
 		cout << ::str << endl;
 		goto Proval;
-	case '2':
-		cout << "Бачу вузький прохiд" << endl;
+	case '4':
+		tex(5);
+		cout << ::str << endl;
 		goto Proval;
-	case '3':	
-		cout << "Я немало пролетiв назад не доскочу" << endl;
+	case '5':
+		tex(6);
+		cout << ::str << endl;
+		goto Proval;
+
+	case '6':
+		tex(5);
+		cout << ::str << endl;
+		goto Proval;
+	case '7':
+		tex(7);
+		cout << ::str << endl;
+		goto Proval;
+	case '8':
+		if (k == 1)
+		{
+			tex(8);
+			cout << ::str << endl; goto End;
+		}
+		else {
+
+			tex(9);
+			cout << ::str << endl;
 			goto Proval;
-	case '4':	
-		cout << "Добре, я взяв себе в руки" << endl;
-			goto Proval;
+		}
+	case '9':
+		tex(10);
+		cout << ::str << endl;
+		goto Proval;
 	default:
 		cout << "Невiрна команда" << endl;
 		goto Proval;
 	}
+		///////////////////////////////////////////потік
+	Potik:;
+		V = _getch(); //нажаття клавіші
+		switch (V)
+		{
+		case '1':
+			tex(13);
+			cout << ::str << endl;
+			goto Potik;
+		case '2':
+			tex(14);
+			cout << ::str << endl;
+			goto Potik;
+		case '3':
+			tex(18);
+			cout << ::str << endl;
+			goto Vopad;
+		case '4':
+			tex(17);
+			cout << ::str << endl;
+			goto Cor;
+		case '5':
+			tex(15);
+			cout << ::str <<"Провал"<< endl;
+			goto Proval;
 
+		case '6':
+			tex(5);
+			cout << ::str << endl;
+			goto Potik;
+		case '7':
+			tex(7);
+			cout << ::str << endl;
+			goto Potik;
+		case '8':
+			tex(16);
+			cout << ::str << endl;
+			goto Potik;
+
+		case '9':
+			tex(10);
+			cout << ::str << endl;
+			goto Potik;
+		default:
+			cout << "Невiрна команда" << endl;
+			goto Potik;
+		}
+
+	Cor:;////////////////////////коридор
+		V = _getch(); //нажаття клавіші
+		switch (V)
+		{
+		case '1':
+			tex(13);
+			cout << ::str << endl;
+			goto Cor;
+		case '2':
+			tex(14);
+			cout << ::str << endl;
+			goto Cor;
+		case '3':
+			tex(5);
+			cout << ::str << endl;
+			goto Cor;
+		case '4':
+			tex(5);
+			cout << ::str << endl;
+			goto Cor;
+		case '5':
+			tex(15);
+			cout << ::str <<"Потічок"<< endl;
+			goto Potik;
+
+		case '6':
+			tex(21);
+			cout << ::str << endl;
+			goto G_O;
+		case '7':
+			tex(22);
+			cout << ::str << endl;
+			goto Pjama;
+		case '8':
+			tex(16);
+			cout << ::str << endl;
+			goto Cor;
+
+		case '9':
+			tex(10);
+			cout << ::str << endl;
+			goto Cor;
+		default:
+			cout << "Невiрна команда" << endl;
+			goto Cor;
+		}
+	Pjama:;///////////////////////////////перед ямою
+		V = _getch(); //нажаття клавіші
+		switch (V)
+		{
+		case '1':
+			tex(13);
+			cout << ::str << endl;
+			goto Pjama;
+		case '2':
+			tex(14);
+			cout << ::str << endl;
+			goto Pjama;
+		case '3':
+			tex(5);
+			cout << ::str << endl;
+			goto Pjama;
+		case '4':
+			tex(5);
+			cout << ::str << endl;
+			goto Pjama;
+		case '5':
+			tex(15);
+			cout << ::str <<"Потічок"<< endl;
+			goto Potik;
+
+		case '6':
+			tex(21);
+			cout << ::str << endl;
+			goto G_O;
+		case '7':
+			tex(24);
+			cout << ::str << endl;
+			goto Pjama;
+		case '8':
+			tex(25);
+			cout << ::str << endl;
+			goto Jama;
+
+		case '9':
+			tex(10);
+			cout << ::str << endl;
+			goto Pjama;
+		default:
+			cout << "Невiрна команда" << endl;
+			goto Pjama;
+		}
+	Jama:;////////////////////////////////////////////////////////Яма
+		V = _getch(); //нажаття клавіші
+		switch (V)
+		{
+		case '1':
+			tex(13);
+			cout << ::str << endl;
+			goto Jama;
+		case '2':
+			tex(27);
+			cout << ::str << endl;
+			m = 1;
+			goto Jama;
+		case '3':
+			tex(5);
+			cout << ::str << endl;
+			goto Jama;
+		case '4':
+			tex(5);
+			cout << ::str << endl;
+			goto Jama;
+		case '5':
+			tex(15);
+			cout << ::str <<"Потічок"<< endl;
+			goto Potik;
+
+		case '6':
+			tex(5);
+			cout << ::str << endl;
+			goto Jama;
+		case '7':
+			tex(24);
+			cout << ::str << endl;
+			goto Jama;
+		case '8':
+			tex(16);
+			cout << ::str << endl;
+			goto Jama;
+
+		case '9':
+			tex(28);
+			cout << ::str << endl;
+			key = 1;
+			goto Jama;
+		default:
+			cout << "Невiрна команда" << endl;
+			goto Jama;
+		}
+
+	Vopad:;//////////////////////////////////верх водопаду
+		V = _getch(); //нажаття клавіші
+		switch (V)
+		{
+		case '1':
+			tex(13);
+			cout << ::str << endl;
+			goto Vopad;
+		case '2':
+			tex(14);
+			cout << ::str << endl;
+			goto Vopad;
+		case '3':
+			tex(5);
+			cout << ::str << endl;
+			goto Vopad;
+		case '4':
+			tex(5);
+			cout << ::str << endl;
+			goto Vopad;
+		case '5':
+			tex(15);
+			cout << ::str << "Потічок" << endl;
+			goto Potik;
+
+		case '6':
+			tex(32);
+			cout << ::str << endl;
+			goto G_O;
+		case '7':
+			tex(7);
+			cout << ::str << endl;
+			goto Vopad;
+		case '8':
+			if (m == 1)
+			{
+				tex(33);
+					cout << ::str << endl;
+					goto Dvopad;
+			}
+			else {
+				tex(34);
+				cout << ::str << endl;
+
+				goto Vopad;
+			}
+
+		case '9':
+			tex(10);
+			cout << ::str << endl;
+			goto Vopad;
+		default:
+			cout << "Невiрна команда" << endl;
+			goto Vopad;
+		}
+	Dvopad:;/////////////////////////////////////низ водопаду.
+		V = _getch(); //нажаття клавіші
+		switch (V)
+		{
+		case '1':
+			tex(13);
+			cout << ::str << endl;
+			goto Dvopad;
+		case '2':
+			tex(38);
+			cout << ::str << endl;
+			goto Dvopad;
+		case '3':
+			tex(36);
+			cout << ::str << endl;
+			goto G_O;
+		case '4':
+			tex(36);
+			cout << ::str << endl;
+			goto G_O;
+		case '5':
+			tex(15);
+			cout << ::str << "Потічок" << endl;
+			goto Potik;
+
+		case '6':
+			tex(37);
+			cout << ::str << endl;
+			goto End;
+		case '7':
+			tex(7);
+			cout << ::str << endl;
+			goto Dvopad;
+		case '8':
+			tex(16);
+			cout << ::str << endl;
+			goto Dvopad;
+
+		case '9':
+			tex(35);
+			cout << ::str << endl;
+			k = 1;
+			goto Dvopad;
+		default:
+			cout << "Невiрна команда" << endl;
+			goto Dvopad;
+		}
+
+	G_O:;
+		tex(39);
+		cout << ::str << endl;
+		tex(40);
+		cout << ::str << endl;
+		V = _getch(); //нажаття клавіші
+		if (V == '1')
+			goto Begi;
+		else exit(0);
+
+
+
+	End:;
+		tex(41);
+		cout << ::str << endl;
+		tex(40);
+		cout << ::str << endl;
+		V = _getch(); //нажаття клавіші
+		if (V == '1')
+			goto Begi;
+		else exit(0);
 
 	
-
 	system("pause");
 	
 	return 0;
