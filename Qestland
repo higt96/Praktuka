@@ -29,16 +29,6 @@ void tex(int n){//Считує рядок N
 
 		 in.close(); //закрыли  файл
 
-		// cin.get();
-		 /*/
-	std::ifstream input("input.txt");
-	std::vector<std::string> words{ std::istream_iterator<std::string>{input}, std::istream_iterator<std::string>{} };
-	input.close();
-
-
-	for (const auto &i : words)
-	if (std::regex_match(i, std::regex("(1)(.*)(01)")))
-		str = i;/*/
 	 }
 
 int main()
@@ -60,28 +50,6 @@ Begi:;
 	cout << ::str << endl;
 
 
-
-	
-	
-/*/	std::ifstream input("input.txt"); //має считувати дані між двома мітками, не робить, зупиняється на пробілі
-	std::vector<std::string> words{ std::istream_iterator<std::string>{input}, std::istream_iterator<std::string>{} };
-	input.close();
-
-	
-	for (const auto &i : words)
-
-	{
-		
-		if (std::regex_match(i, std::regex("(01)")))
-			k = 0;
-		if (k == 1)
-		{
-			str += i;
-			str += " ";
-		}
-		if (std::regex_match(i, std::regex(n)))
-				k = 1;
-		/*/
 Proval:;////////////////////////////////////Провал
 	
 	V = _getch(); //нажаття клавіші
