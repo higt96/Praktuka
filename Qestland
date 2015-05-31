@@ -12,23 +12,24 @@
 using namespace std;
 string str;
 
-void tex(int n){//Считує рядок N
+void tex(int n){//зчитує рядок N
 	
 		 setlocale(0, "");
 
-		 ifstream in("input.txt"); // открыли файл для чтения
+		 ifstream in("input.txt"); // Відкрити файл для читання
 
 		 
-		 for (int i = 1; i < n; i++) // пропускаем n - 1 строки
+		 for (int i = 1; i < n; i++) // пропускаемо n - 1 рядка
 			 in.ignore(255, '\n');
 
-		 if (!in.eof()) // если не конец файла
+		 if (!in.eof()) // якщо не кінуць файла
 		 {
-			 getline(in, ::str); // считали нужную строку
+			 getline(in, ::str); // зчитати потрібний рядок
 		 }
 
-		 in.close(); //закрыли  файл
+		 in.close(); //закрти  файл
 
+		
 	 }
 
 int main()
@@ -40,6 +41,8 @@ Begi:;
 	int k = 0;///кирка
 	int m = 0; //мотузка
 	int key = 0;//ключ
+	int l = 0; //ліхтарик
+
 	
 
 	tex(1);
@@ -48,7 +51,8 @@ Begi:;
 	cout << ::str << endl;
 	tex(3);
 	cout << ::str << endl;
-
+	tex(24);
+	cout << ::str << endl;
 
 Proval:;////////////////////////////////////Провал
 	
@@ -73,9 +77,9 @@ Proval:;////////////////////////////////////Провал
 			goto Proval;
 		}
 	case '2':
-		tex(11);
+		tex(12);
 		cout << ::str << endl;
-		goto Potik;
+		goto Proval;
 	case '3':
 		tex(5);
 		cout << ::str << endl;
@@ -90,9 +94,9 @@ Proval:;////////////////////////////////////Провал
 		goto Proval;
 
 	case '6':
-		tex(5);
+		tex(11);
 		cout << ::str << endl;
-		goto Proval;
+		goto Potik;
 	case '7':
 		tex(7);
 		cout << ::str << endl;
@@ -127,7 +131,7 @@ Proval:;////////////////////////////////////Провал
 			cout << ::str << endl;
 			goto Potik;
 		case '2':
-			tex(14);
+			tex(19);
 			cout << ::str << endl;
 			goto Potik;
 		case '3':
@@ -174,8 +178,16 @@ Proval:;////////////////////////////////////Провал
 			cout << ::str << endl;
 			goto Cor;
 		case '2':
-			tex(14);
-			cout << ::str << endl;
+			if (l == 1)
+			{
+				tex(23);
+				cout << ::str << endl;
+			}
+			else
+			{
+				tex(20);
+				cout << ::str << endl;
+			}
 			goto Cor;
 		case '3':
 			tex(5);
@@ -187,7 +199,7 @@ Proval:;////////////////////////////////////Провал
 			goto Cor;
 		case '5':
 			tex(15);
-			cout << ::str <<"Потічок"<< endl;
+			cout << ::str <<"Потiчок"<< endl;
 			goto Potik;
 
 		case '6':
@@ -197,53 +209,8 @@ Proval:;////////////////////////////////////Провал
 		case '7':
 			tex(22);
 			cout << ::str << endl;
-			goto Pjama;
-		case '8':
-			tex(16);
-			cout << ::str << endl;
+			l = 1;
 			goto Cor;
-
-		case '9':
-			tex(10);
-			cout << ::str << endl;
-			goto Cor;
-		default:
-			cout << "Невiрна команда" << endl;
-			goto Cor;
-		}
-	Pjama:;///////////////////////////////перед ямою
-		V = _getch(); //нажаття клавіші
-		switch (V)
-		{
-		case '1':
-			tex(13);
-			cout << ::str << endl;
-			goto Pjama;
-		case '2':
-			tex(14);
-			cout << ::str << endl;
-			goto Pjama;
-		case '3':
-			tex(5);
-			cout << ::str << endl;
-			goto Pjama;
-		case '4':
-			tex(5);
-			cout << ::str << endl;
-			goto Pjama;
-		case '5':
-			tex(15);
-			cout << ::str <<"Потічок"<< endl;
-			goto Potik;
-
-		case '6':
-			tex(21);
-			cout << ::str << endl;
-			goto G_O;
-		case '7':
-			tex(24);
-			cout << ::str << endl;
-			goto Pjama;
 		case '8':
 			tex(25);
 			cout << ::str << endl;
@@ -252,11 +219,12 @@ Proval:;////////////////////////////////////Провал
 		case '9':
 			tex(10);
 			cout << ::str << endl;
-			goto Pjama;
+			goto Cor;
 		default:
 			cout << "Невiрна команда" << endl;
-			goto Pjama;
+			goto Cor;
 		}
+	
 	Jama:;////////////////////////////////////////////////////////Яма
 		V = _getch(); //нажаття клавіші
 		switch (V)
@@ -268,7 +236,6 @@ Proval:;////////////////////////////////////Провал
 		case '2':
 			tex(27);
 			cout << ::str << endl;
-			m = 1;
 			goto Jama;
 		case '3':
 			tex(5);
@@ -280,7 +247,7 @@ Proval:;////////////////////////////////////Провал
 			goto Jama;
 		case '5':
 			tex(15);
-			cout << ::str <<"Потічок"<< endl;
+			cout << ::str <<"Потiчок"<< endl;
 			goto Potik;
 
 		case '6':
@@ -300,6 +267,7 @@ Proval:;////////////////////////////////////Провал
 			tex(28);
 			cout << ::str << endl;
 			key = 1;
+			m = 1;
 			goto Jama;
 		default:
 			cout << "Невiрна команда" << endl;
@@ -315,7 +283,7 @@ Proval:;////////////////////////////////////Провал
 			cout << ::str << endl;
 			goto Vopad;
 		case '2':
-			tex(14);
+			tex(29);
 			cout << ::str << endl;
 			goto Vopad;
 		case '3':
@@ -328,7 +296,7 @@ Proval:;////////////////////////////////////Провал
 			goto Vopad;
 		case '5':
 			tex(15);
-			cout << ::str << "Потічок" << endl;
+			cout << ::str << "Потiчок" << endl;
 			goto Potik;
 
 		case '6':
@@ -383,7 +351,7 @@ Proval:;////////////////////////////////////Провал
 			goto G_O;
 		case '5':
 			tex(15);
-			cout << ::str << "Потічок" << endl;
+			cout << ::str << "Потiчок" << endl;
 			goto Potik;
 
 		case '6':
